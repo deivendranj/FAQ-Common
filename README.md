@@ -78,11 +78,11 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
-<summary>Describe the following network devices and the difference between them:</summary><br><b>
+<summary>Describe the following network devices and the difference between them: </summary><br><b>
 
   * router
   * switch
-  * hub</summary><br><b>
+  * hub
 </b></details>
 
 <details>
