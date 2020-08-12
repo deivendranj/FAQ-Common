@@ -310,10 +310,24 @@ Generic Routing Encapsulation (GRE) is a tunneling protocol developed by Cisco S
 
 <details>
 <summary>What is VXLAN? How does it works?</summary><br><b>
+
+Virtual Extensible LAN is a network virtualization technology that attempts to address the scalability problems associated with large cloud computing deployment.
+VXLAN is the most commonly used protocol to create overlay networks enabling the use of a virtual network of switches, routers, firewalls & load balancers
+It provides a way to extend Layer 2 segments over the underlying shared network infrastructure so that tenant workloads can be placed across physical pods in the data center. Higher scalability to address more Layer 2 segments. VXLAN uses a 24-bit segment ID, the VXLAN network identifier (VNID).
+
+![alt_text](https://blogs.vmware.com/vsphere/files/2013/05/New-Learning-3.jpg)
 </b></details>
 
 <details>
 <summary>What is SNAT?</summary><br><b>
+
+Network Address Translation (NAT) occurs when one of the IP addresses in an IP packet header is changed. 
+
+A Secure Network Address Translation (SNAT) is an object that maps the source client IP address in a request to a translation address defined on the BIG-IP device. ... For example, when the BIG-IP system receives a new connection from source IP address 192.168
+
+In a SNAT, the destination IP address is maintained and the source IP address is changed. Most commonly, a SNAT allows a host on the “inside” of the NAT, in an RFC 1918 IP address space, to initiate a connection to a host on the “outside” of the NAT. A DNAT, by way of contrast, occurs when the destination address is changed and the source IP address is maintained. A DNAT allows a host on the “outside” to connect to a host on the “inside”. In both cases, the NAT has to maintain a connection table which tells the NAT where to route returning packets. An important difference between a SNAT and a DNAT is that a SNAT allows multiple hosts on the “inside” to get to any host on the “outside”. By way of contrast, a DNAT allows any host on the “outside” to get to a single host on the “inside”
+
+![alt_text](http://www.commercialventvac.com/finao/DNATs-and-SNATs_html_106dc8c2.gif)
 </b></details>
 
 <details>
