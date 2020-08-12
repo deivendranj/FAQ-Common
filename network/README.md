@@ -271,18 +271,41 @@ There is also "Management Plane" which refers to monitoring and management funct
 
 <details>
 <summary>What is link aggregation? Why is it used?</summary><br><b>
+
+Link aggregation is a way of bundling a bunch of individual (Ethernet) links together so they act like a single logical link. ... Another important reason for using link aggregation is to provide fast and transparent recovery in case one of the individual links fails
+
+Within the IEEE specification the Link Aggregation Control Protocol (LACP) provides a method to control the bundling of several physical ports together to form a single logical channel. LACP allows a network device to negotiate an automatic bundling of links by sending LACP packets to the peer (directly connected device that also implements LACP). LACP works by sending frames (LACPDUs) down all links that have the protocol enabled. If it finds a device on the other end of the link that also has LACP enabled, it will also independently send frames along the same links enabling the two units to detect multiple links between themselves and then combine them into a single logical link.
+
+LACP can be configured in one of two modes: active or passive. In active mode it will always send frames along the configured links. In passive mode however, it acts as "speak when spoken to", and therefore can be used as a way of controlling accidental loops (as long as the other device is in active mode).
+
+Some claim that the most important feature of link aggregation is link failover. With link failover, traffic from a failed link can be switched over to working links in the aggregation. For security purposes, data is transmitted over the usual link and the other link in the aggregation sits idle or can transmit data from another physical link. If the first link goes down, a signal is sent to the second link to take over data transmission. In this situation, the second link can be set to either continue taking on data from both streams at a slower transmission rate or it can be set to prioritize which data has a higher priority.
+
 </b></details>
 
 <details>
 <summary>What is Asymmetric Routing? How do deal with it?</summary><br><b>
+
+Asymmetric routing is when a packet takes one path to the destination and takes another path when returning to the source. For example, review the following diagram. Packets from A to B take one route and packets from B to A take another route.
+
+![alt_text](https://networkqna.com/wp-content/uploads/2016/10/asymmetric.jpg)
+
+Solution:-
+The solution to this problem is to adjust the placement of the firewalls or internal routing such that traffic in both directions flows through the same firewall, even if incoming traffic enters the network through a different router than the router that handled the matching outgoing traffic
 </b></details>
 
 <details>
 <summary>What overlay (tunnel) protocols are you familiar with?</summary><br><b>
+
+Overlays are logical tunnels. A logical connection between two devices, in our case, two Silver Peak appliances. created for different traffic types and policies (such as VoIP. A protocol optimized for the transmission of voice through the Internet or other packet-switched networks.).
+
 </b></details>
 
 <details>
 <summary>What is GRE? How does it works?</summary><br><b>
+	
+Generic Routing Encapsulation (GRE) is a tunneling protocol developed by Cisco Systems that can encapsulate a wide variety of network layer protocols inside virtual point-to-point links or point-to-multipoint links over an Internet Protocol network
+
+![alt_text](https://www.9tut.com/images/ccna_self_study/GRE_Tunnel/GRE_Tunnel.jpg)
 </b></details>
 
 <details>
