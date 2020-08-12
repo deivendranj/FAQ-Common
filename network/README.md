@@ -143,7 +143,7 @@ Once the files are ready and correctly installed, just start the SSL/TLS negotia
 	
 TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
 
-[Penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference) provides a good explanation.
+![alt text](https://www.homenethowto.com/wp-content/uploads/table-tcp-udp.png)
 </b></details>
 
 <details>
