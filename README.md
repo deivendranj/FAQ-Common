@@ -50,6 +50,7 @@ Private IP addresses can be either static or dynamic, but in each case, the avai
 You can read more about the OSI model in [penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference)
 </b></details>
 
+<details>
 <summary>What delivery schemes are you familiar with?</summary><br><b>
 
 Unitcast: One to one communication where there is one sender and one receiver.
@@ -75,8 +76,9 @@ CSMA/CD algorithm:
 5. They are waiting for a random time before sending again
 6. Once each host waited for a random time, they try to send the frame again and so the
 </b></details>
+
 <details>
-<summary>Describe the following network devices and the difference between them:
+<summary>Describe the following network devices and the difference between them:</summary><br><b>
 
   * router
   * switch
