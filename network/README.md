@@ -166,34 +166,61 @@ Systems keep an ARP look-up table where they store information about what IP add
 
 <details>
 <summary>What is TTL?</summary><br><b>
+
+Time to live (TTL) refers to the amount of time or “hops” that a packet is set to exist inside a network before being discarded by a router. TTL is also used in other contexts including CDN caching and DNS caching.
+
+When a packet of information is created and sent out across the Internet, there is a risk that it will continue to pass from router to router indefinitely. To mitigate this possibility, packets are designed with an expiration called a time-to-live or hop limit. Packet TTL can also be useful in determining how long a packet has been in circulation, and allow the sender to receive information about a packet’s path through the Internet.
+
+Each packet has a place where it stores a numerical value determining how much longer it should continue to move through the network. Every time a router receives a packet, it subtracts one from the TTL count and then passes it onto the next location in the network. If at any point the TTL count is equal to zero after the subtraction, the router will discard the packet and send an ICMP message back to the originating host.
+
+The commonly used network commands ping and traceroute both utilize TTL. When using the traceroute command, a stream of packets with increasingly higher sequential TTLs are sent across the Internet towards a destination. Because each step along the connection is the last stop for one of the packets, each location will return an ICMP message to the sender after discarding the packet. The time it takes for the ICMP message to return to the sender is then used to determine how long it takes to get to each successive hop along the network.
+
+![alt_text](https://www.cloudflare.com/img/learning/cdn/glossary/ttl/icmp-traceroute-diagram.png)
 </b></details>
 
 <details>
 <summary>What is DHCP? How does it works?</summary><br><b>
+
+Dynamic Host Configuration Protocol (DHCP) is a network management protocol used to automate the process of configuring devices on IP networks, thus allowing them to use network services such as DNS, NTP, and any communication protocol based on UDP or TCP. A DHCP server dynamically assigns an IP address and other network configuration parameters to each device on a network so they can communicate with other IP networks. DHCP is an enhancement of an older protocol called BOOTP. DHCP is an important part of the DDI solution (DNS-DHCP-IPAM).
+
+![alt_text](https://bluecatnetworks.com/wp-content/uploads/2020/05/How-does-DHCP-work-1024x428.png)
 </b></details>
 
 <details>
 <summary>What is SSL tunneling? How does it works?</summary><br><b>
+	
+SSL Tunneling involves a client that requires an SSL connection to a backend service or secure server via a proxy server. This proxy server opens the connection between the client and the backend service and copies the data to both sides without any direct interference in the SSL connection.
+	
+![alt_text](http://2.bp.blogspot.com/-08V2nH2GClU/VjpSnA1kl1I/AAAAAAAABOk/jtTzIzhcvRE/s400/image2.png)
 </b></details>
 
 <details>
 <summary>What is a socket? Where can you see the list of sockets in your system?</summary><br><b>
+	A socket is one endpoint of a two-way communication link between two programs running on the network. A socket is bound to a port number so that the TCP layer can identify the application that data is destined to be sent to. An endpoint is a combination of an IP address and a port number
 </b></details>
 
 <details>
 <summary>What is IPv6? Why should we consider using it if we have IPv4?</summary><br><b>
+	Internet Protocol version 6 is the most recent version of the Internet Protocol, the communications protocol that provides an identification and location system for computers on networks and routes traffic across the Internet
 </b></details>
 
 <details>
 <summary>What is VLAN?</summary><br><b>
+	A virtual LAN is any broadcast domain that is partitioned and isolated in a computer network at the data link layer. LAN is the abbreviation for local area network and in this context virtual refers to a physical object recreated and altered by additional logic
 </b></details>
 
 <details>
 <summary>What is MTU?</summary><br><b>
+	In computer networking, the maximum transmission unit (MTU) is the size of the largest protocol data unit (PDU) that can be communicated in a single network layer transaction.[1] The MTU relates to, but is not identical to the maximum frame size that can be transported on the data link layer, e.g. Ethernet frame.
+
+Larger MTU is associated with reduced overhead. Smaller MTU values can reduce network delay. In many cases, MTU is dependent on underlying network capabilities and must be adjusted manually or automatically so as to not exceed these capabilities. MTU parameters may appear in association with a communications interface or standard. Some systems may decide MTU at connect time.
 </b></details>
 
 <details>
 <summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
+	In computer networking, the maximum transmission unit (MTU) is the size of the largest protocol data unit (PDU) that can be communicated in a single network layer transaction.[1] The MTU relates to, but is not identical to the maximum frame size that can be transported on the data link layer, e.g. Ethernet frame.
+
+Larger MTU is associated with reduced overhead. Smaller MTU values can reduce network delay. In many cases, MTU is dependent on underlying network capabilities and must be adjusted manually or automatically so as to not exceed these capabilities. MTU parameters may appear in association with a communications interface or standard. Some systems may decide MTU at connect time.
 </b></details>
 
 <details>
@@ -202,18 +229,28 @@ Systems keep an ARP look-up table where they store information about what IP add
 
 <details>
 <summary>What is SDN?</summary><br><b>
+	Software-defined networking technology is an approach to network management that enables dynamic, programmatically efficient network configuration in order to improve network performance and monitoring, making it more like cloud computing than traditional network management. 
 </b></details>
 
 <details>
 <summary>What is ICMP? What is it used for?</summary><br><b>
+	The Internet Control Message Protocol is an internet layer protocol used by network devices to diagnose network communication issues. ICMP is mainly used to determine whether or not data is reaching its intended destination in a timely manner. Commonly, the ICMP protocol is used on network devices, such as routers.
+	
+![alt_text](https://cdn.slidesharecdn.com/ss_thumbnails/internetcontrolmessageprotocol-121115085749-phpapp01-thumbnail-4.jpg?cb=1352969905)
 </b></details>
 
 <details>
 <summary>What is NAT? How does it works?</summary><br><b>
+	It enables private IP networks that use unregistered IP addresses to connect to the Internet. NAT operates on a router, usually connecting two networks together, and translates the private (not globally unique) addresses in the internal network into legal addresses, before packets are forwarded to another network
 </b></details>
 
 <details>
 <summary>Which factors affect network performances</summary><br><b>
+	* the number of devices on the network
+	* the bandwidth of the transmission medium
+	* the type of network traffic
+	* network latency
+	* the number of transmission errors
 </b></details>
 
 <details>
@@ -229,6 +266,7 @@ There is also "Management Plane" which refers to monitoring and management funct
 
 <details>
 <summary>Explain Spanning Tree Protocol (STP)</summary><br><b>
+	Spanning Tree Protocol (STP) is a link management protocol that provides path redundancy while preventing undesirable loops in the network. When it comes to ethernet networks, only one active path can exist between two stations in order for them to function properly. Loops occur in networks for a variety of reason
 </b></details>
 
 <details>
