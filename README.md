@@ -47,7 +47,6 @@ Private IP addresses can be either static or dynamic, but in each case, the avai
 - Data link: provides a link between two directly connected nodes (MAC is here)
 - Physical: the electrical and physical spec the data connection (Bits are here)
 
-You can read more about the OSI model in [penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference)
 </b></details>
 
 <details>
