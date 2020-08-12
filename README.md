@@ -128,4 +128,154 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 
 <details>
 <summary>How does SSL handshake work?</summary><br><b>
+For SSL/TLS negotiation to take place, the system administrator must prepare the minimum of 2 files: Private Key and Certificate. When requesting from a Certificate Authority such as Trust Services, an additional file must be created. This file is called Certificate Signing Request, generated from the Private Key. The process for generating the files are dependent on the software that will be using the files for encryption. For a list of the server softwares DigiCert has, look at: DigiCert CSR Generation.
+
+Note that although certificates requested from Certificate Authorities such as DigICert are inherently trusted by most clients, additional certificates called Intermediate Certificate Authority Certificates and Certificate Authority Root Certificates may need to be installed on the server. This is again server software dependent. There is usually no need to install the Intermediate and Root CA files on the client applications or browsers.
+
+Once the files are ready and correctly installed, just start the SSL/TLS negotiation by using the secured protocol.  On browser applications it is usually https://www.digicert.com. Remember to use your secured website address. Above is just a sample address.
+
 </b></details>
+
+<details>
+<summary>What is the difference between TCP and UDP?</summary><br><b>
+	
+TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
+
+[Penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference) provides a good explanation.
+</b></details>
+
+<details>
+<summary>What TCP/IP protocols are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "default gateway"</summary><br><b>
+
+A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet.
+</b></details>
+
+<details>
+<summary>What is ARP? How does it works?</summary><br><b>
+
+ARP stands for Address Resolution Protocol. When you try to ping an IP address on your local network, say 192.168.1.1, your system has to turn the IP address 192.168.1.1 into a MAC address. This involves using ARP to resolve the address, hence its name.
+
+Systems keep an ARP look-up table where they store information about what IP addresses are associated with what MAC addresses. When trying to send a packet to an IP address, the system will first consult this table to see if it already knows the MAC address. If there is a value cached, ARP is not used.
+</b></details>
+
+<details>
+<summary>What is TTL?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is DHCP? How does it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SSL tunneling? How does it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a socket? Where can you see the list of sockets in your system?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is IPv6? Why should we consider using it if we have IPv4?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is VLAN?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is MTU?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False?. Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SDN?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is ICMP? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is NAT? How does it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which factors affect network performances</summary><br><b>
+</b></details>
+
+<details>
+<summary>What the terms "Data Plane" and "Control Plane" refer?</summary><br><b>
+
+The exact meaning is usually depends on the context but overall data plane refers to all the functions that forward packets and/or frames from one interface to another while control plane refers to all the functions that make use of routing protocols.
+
+There is also "Management Plane" which refers to monitoring and management functions.
+</b></details>
+
+<a name="network-advanced"></a>
+#### :star: Advanced
+
+<details>
+<summary>Explain Spanning Tree Protocol (STP)</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is link aggregation? Why is it used?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Asymmetric Routing? How do deal with it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What overlay (tunnel) protocols are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is GRE? How does it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is VXLAN? How does it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SNAT?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain OSPF</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Spine & Leaf</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Network Congestion? What can cause it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What can you tell me about UDP packet format? What about TCP packet format? How is it different?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the exponential backoff algorithm? Where is it used?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Using Hamming code, what would be the code word for the following data word 100111010001101?</summary><br><b>
+
+00110011110100011101
+</b></details>
+
