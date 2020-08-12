@@ -47,6 +47,7 @@ Private IP addresses can be either static or dynamic, but in each case, the avai
 - Data link: provides a link between two directly connected nodes (MAC is here)
 - Physical: the electrical and physical spec the data connection (Bits are here)
 
+![alt text](https://github.com/deivendranj/FAQ-Common/blob/master/images/Picture1.jpg?raw=true)
 </b></details>
 
 <details>
@@ -132,6 +133,8 @@ For SSL/TLS negotiation to take place, the system administrator must prepare the
 Note that although certificates requested from Certificate Authorities such as DigICert are inherently trusted by most clients, additional certificates called Intermediate Certificate Authority Certificates and Certificate Authority Root Certificates may need to be installed on the server. This is again server software dependent. There is usually no need to install the Intermediate and Root CA files on the client applications or browsers.
 
 Once the files are ready and correctly installed, just start the SSL/TLS negotiation by using the secured protocol.  On browser applications it is usually https://www.digicert.com. Remember to use your secured website address. Above is just a sample address.
+
+![alt text](https://github.com/deivendranj/FAQ-Common/blob/master/images/Picture2.jpg?raw=true)
 
 </b></details>
 
