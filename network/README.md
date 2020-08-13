@@ -569,3 +569,22 @@ IPSec Transport mode is used for end-to-end communications, for example, for com
 
 </b></details>
 
+<details>
+<summary>What is loadbalancing and how is it done on application layer?</summary><br><b>
+
+Load balancing is defined as the methodical and efficient distribution of network or application traffic across multiple servers in a server farm. Each load balancer sits between client devices and backend servers, receiving and then distributing incoming requests to any available server capable of fulfilling them
+
+</b></details>
+
+<details>
+<summary>What are the different types of DNS loadbalancing?</summary><br><b>
+
+DNS load balancing is the practice of configuring a domain in the Domain Name System (DNS) such that client requests to the domain are distributed across a group of server machines. A domain can correspond to a website, a mail system, a print server, or another service that is made accessible via the Internet.
+
+Backup server: A clone instance of a domain is created to serve as a secondary DNS. The primary DNS may redirect traffic to this server at runtime.
+
+Round robin DNS-based load sharing: DNS requests are rotated and shared across multiple domain server instances. Although mainly a load sharing algorithm, this also facilitates load balancing with DNS.
+
+Dynamic DNS load balancing: DNS requests are routed between domain servers with the best available resources and minimal load.
+
+</b></details>
