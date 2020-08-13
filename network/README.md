@@ -634,3 +634,13 @@ Fragmentation is necessary for data transmission, as every network has a unique 
 ![alt_text](https://www.omnisecu.com/images/tcpip/recursive-iterative-dns-query.jpg)
 	
 </b></details>
+
+
+<details>
+<summary>what is Path MTU?</summary><br><b>
+	 
+Path MTU Discovery (PMTUD) is a standardized technique in computer networking for determining the maximum transmission unit (MTU) size on the network path between two Internet Protocol (IP) hosts, usually with the goal of avoiding IP fragmentation.
+
+For IPv4 packets, Path MTU Discovery works by setting the Don't Fragment (DF) flag bit in the IP headers of outgoing packets. ... Conversely, if PMTUD finds that the path allows a larger MTU than is possible on the lower link, the OS will periodically reprobe to see if the path has changed and now allows larger packets.
+
+</b></details>
