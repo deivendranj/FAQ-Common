@@ -615,3 +615,22 @@ All BGP path attributes fall into one of four main categories. Note that this li
 * Optional Non-Transitive (for example: Cluster List)
 
 </b></details>
+
+<details>
+<summary>What is IP fragmentation?</summary><br><b>
+
+IP fragmentation is an Internet Protocol (IP) process that breaks packets into smaller pieces (fragments), so that the resulting pieces can pass through a link with a smaller maximum transmission unit (MTU) than the original packet size. The fragments are reassembled by the receiving host.
+
+![alt_text](https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/PDU_Fragmentaion_-_en.png/400px-PDU_Fragmentaion_-_en.png)
+
+Fragmentation is necessary for data transmission, as every network has a unique limit for the size of datagrams that it can process. This limit is known as the maximum transmission unit (MTU).
+
+</b></details>
+
+<details>
+<summary>What is DNS Recursive, Iterative</summary><br><b>
+
+
+![alt_text](https://www.omnisecu.com/images/tcpip/recursive-iterative-dns-query.jpg)
+	
+</b></details>
