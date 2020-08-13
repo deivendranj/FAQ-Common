@@ -662,5 +662,4 @@ Zone Transfers
 
 ![alt_text](https://www.cloudflare.com/img/learning/dns/glossary/dns-zone/dns-zone.png)
 
-<details>
-<summary>What is a zone? What types of zones are there?</summary><br><b>
+</b></details>
