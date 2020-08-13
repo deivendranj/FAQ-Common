@@ -415,3 +415,19 @@ OSPF is a IGP , an Interior Gateway Protocol, much like EIGRP, OSPF, IS-IS, RIP.
 ![alt_text](https://www.ciscopress.com/content/images/chap3_9781587133237/elementLinks/03fig09.jpg)
 
 </b></details>
+
+</b></details>
+
+<details>
+<summary>What is DNS?</summary><br><b>
+
+The Domain Name System is a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities
+
+</b></details>
+
+<details>
+<summary>What happens when you type amazon.com in the browser?</summary><br><b>
+
+
+</b></details>
+
