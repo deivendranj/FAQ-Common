@@ -643,4 +643,24 @@ Path MTU Discovery (PMTUD) is a standardized technique in computer networking fo
 
 For IPv4 packets, Path MTU Discovery works by setting the Don't Fragment (DF) flag bit in the IP headers of outgoing packets. ... Conversely, if PMTUD finds that the path allows a larger MTU than is possible on the lower link, the OS will periodically reprobe to see if the path has changed and now allows larger packets.
 
-</b></details>
+<details>
+<summary>What is a zone? What types of zones are there?</summary><br><b>
+
+
+<details>
+<summary>What is a zone? What types of zones are there?</summary><br><b>
+
+A DNS zone is a portion of the DNS namespace that is managed by a specific organization or administrator. A DNS zone is an administrative space which allows for more granular control of DNS components, such as authoritative nameservers. The domain name space is a hierarchical tree, with the DNS root domain at the top
+
+Active Directory Integrated Zones. Active Directory Integrated Zones stores its zone data in Active Directory. ...
+Primary Zone. This is the main zone and has a read/write copy of the zone data. ...
+Secondary Zone. ...
+Stub Zone. ...
+Forward Lookup Zone. ...
+Reverse Lookup Zone. ...
+Zone Transfers
+
+![alt_text](https://www.cloudflare.com/img/learning/dns/glossary/dns-zone/dns-zone.png)
+
+<details>
+<summary>What is a zone? What types of zones are there?</summary><br><b>
