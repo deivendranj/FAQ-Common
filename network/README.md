@@ -428,6 +428,7 @@ The Domain Name System is a hierarchical and decentralized naming system for com
 <details>
 <summary>What happens when you type amazon.com in the browser?</summary><br><b>
 
+![alt_text](https://github.com/deivendranj/FAQ-Common/blob/master/images/Picture5.png?raw=true)
 
 </b></details>
 
