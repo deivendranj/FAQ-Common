@@ -332,22 +332,63 @@ In a SNAT, the destination IP address is maintained and the source IP address is
 
 <details>
 <summary>Explain OSPF</summary><br><b>
+
+Open shortest path first (OSPF) is a link-state routing protocol which is used to find the best path between the source and the destination router using its own shortest path first (SPF) algorithm. A link-state routing protocol is a protocol which uses the concept of triggered updates, i.e., if there is a change observed in the learned routing table then the updates are triggered only, not like the distance-vector routing protocol where the routing table are exchanged at a period of time.
+
+Open shortest path first (OSPF) is developed by Internet Engineering Task Force (IETF) as one of the Interior Gateway Protocol (IGP), i.e., the protocol which aims at moving the packet within a large autonomous system or routing domain. It is a network layer protocol which works on the protocol number 89 and uses AD value 110. OSPF uses multicast address 224.0.0.5 for normal communication and 224.0.0.6 for update to designated router(DR)/Backup Designated Router (BDR).
+
+![alt_text](https://media.geeksforgeeks.org/wp-content/uploads/rrf.png)
+
+Open shortest path first (OSPF) is a link-state routing protocol which is used to find the best path between the source and the destination router using its own SPF algorithm
+
+Backbone router – The area 0 is known as backbone area and the routers in area 0 are known as backbone routers. If the routers exists partially in the area 0then also it is a backbone router.
+Internal router – An internal router is a router which have all of its interfaces in a single area.
+Area Boundary Router (ABR) – The router which connects backbone area with another area is called Area Boundary Router. It belongs to more than one area. The ABRs therefore maintain multiple link-state databases that describe both the backbone topology and the topology of the other areas.
+4.Area Summary Border Router (ASBR) – When an OSPF router is connected to a different protocol like EIGRP, or Border Gateway Protocol, or any other routing protocol then it is known as AS. The router which connects two different AS (in which one of the interface is operating OSPF) is known as Area Summary Border Router. These routers perform redistribution. ASBRs run both OSPF and another routing protocol, such as RIP or BGP. ASBRs advertise the exchanged external routing information throughout their AS.
+
 </b></details>
 
 <details>
 <summary>Explain Spine & Leaf</summary><br><b>
+	
+A spine-leaf architecture is an increasingly popular data center network topology that consists of two switching layers—a spine and leaf. The leaf layer consists of access switches that aggregate traffic from servers—typically affixed top of rack (ToR) or end of rack (EoR)—and connect directly into the spine or network core. Spine switches interconnect all of the leaf switches in a full-mesh topology
+
+![alt_text](https://www.arubanetworks.com/wp-content/uploads/PoV_Spine-Leaf-Architecture.jpg)
+
+Other common differences in spine-leaf topologies include:
+
+The removal of Spanning Tree Protocol (STP)
+Increased use of fixed port switches over modular models for the network backbone
+More cabling to purchase and manage, given the higher interconnection count
+A scale-out vs. scale-up of infrastructure
 </b></details>
 
 <details>
 <summary>What is Network Congestion? What can cause it?</summary><br><b>
+
+Network congestion in data networking and queueing theory is the reduced quality of service that occurs when a network node or link is carrying more data than it can handle. Typical effects include queueing delay, packet loss or the blocking of new connections. A consequence of congestion is that an incremental increase in offered load leads either only to a small increase or even a decrease in network throughput.
+
+Too many hosts in broadcast domain. ...
+Broadcast Storms. ...
+Low Bandwidth. ...
+Adding Retransmitting Hubs. ...
+Multicasting. ...
+Outdated Hardware. ...
+Bad Configuration Management. ...
+Rogue Adapter Broadcasts
 </b></details>
 
 <details>
 <summary>What can you tell me about UDP packet format? What about TCP packet format? How is it different?</summary><br><b>
+
+![alt_text](https://skminhaj.files.wordpress.com/2016/02/92926-tcp_udp_headers.jpg)
 </b></details>
 
 <details>
 <summary>What is the exponential backoff algorithm? Where is it used?</summary><br><b>
+
+Exponential backoff is an algorithm that uses feedback to multiplicatively decrease the rate of some process, in order to gradually find an acceptable rate
+
 </b></details>
 
 <details>
