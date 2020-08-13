@@ -442,3 +442,31 @@ The initial IPv4 suite was developed with few security provisions. As a part of 
 
 </b></details>
 
+<details>
+<summary>UNDERSTANDING VPN IPSEC TUNNEL MODE AND IPSEC TRANSPORT MODE - WHAT'S THE DIFFERENCE?</summary><br><b>
+
+IPSec’s protocol objective is to provide security services for IP packets such as encrypting sensitive data, authentication, protection against replay and data confidentiality.
+
+As outlined in our IPSec protocol article, Encapsulating Security Payload (ESP) and Authentication Header (AH) are the two IPSec security protocols used to provide these security services.  Analysing  the ESP and AH protocols is out of this article’s scope, however you can turn to our IPSec article where you’ll find an in-depth analysis and packet diagrams to help make the concept clear.
+
+ 
+UNDERSTANDING IPSEC MODES –TUNNEL MODE & TRANSPORT MODE
+IPSec can be configured to operate in two different modes, Tunnel and Transport mode. Use of each mode depends on the requirements and implementation of IPSec.
+
+ 
+IPSEC TUNNEL MODE
+IPSec tunnel mode is the default mode. With tunnel mode, the entire original IP packet is protected by IPSec. This means IPSec wraps the original packet, encrypts it, adds a new IP header and sends it to the other side of the VPN tunnel (IPSec peer).
+
+Tunnel mode is most commonly used between gateways (Cisco routers or ASA firewalls), or at an end-station to a gateway, the gateway acting as a proxy for the hosts behind it.
+
+Tunnel mode is used to encrypt traffic between secure IPSec Gateways, for example two Cisco routers connected over the Internet via IPSec VPN. Configuration and setup of this topology is extensively covered in our Site-to-Site IPSec VPN article. In this example, each router acts as an IPSec Gateway for their LAN, providing secure connectivity to the remote network:
+
+![alt_text](http://www.firewall.cx/images/stories/ipsec-modes-transport-tunnel-5.gif)
+
+IPSEC TRANSPORT MODE
+IPSec Transport mode is used for end-to-end communications, for example, for communication between a client and a server or between a workstation and a gateway (if the gateway is being treated as a host).  A good example would be an encrypted Telnet or Remote Desktop session from a workstation to a server.
+
+![alt_text](http://www.firewall.cx/images/stories/ipsec-modes-transport-tunnel-6.gif)
+
+</b></details>
+
