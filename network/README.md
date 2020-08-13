@@ -408,3 +408,10 @@ Border Gateway Protocol (BGP) is used to Exchange routing information for the in
 OSPF is a IGP , an Interior Gateway Protocol, much like EIGRP, OSPF, IS-IS, RIP. BGP is a EGP, Exterior Gateway Protocol . And there is only one EGP, that is BGP.
 
 </b></details>
+
+<details>
+<summary>Explain Routing Protocols</summary><br><b>
+
+![alt_text](https://www.ciscopress.com/content/images/chap3_9781587133237/elementLinks/03fig09.jpg)
+
+</b></details>
