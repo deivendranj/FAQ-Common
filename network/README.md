@@ -392,8 +392,26 @@ Exponential backoff is an algorithm that uses feedback to multiplicatively decre
 </b></details>
 
 <details>
-<summary>Using Hamming code, what would be the code word for the following data word 100111010001101?</summary><br><b>
+<summary>What is EIGRP</summary><br><b>
+
+Enhanced Interior Gateway Routing Protocol (EIGRP) is an advanced distance-vector routing protocol that is used on a computer network for automating routing decisions and configuration. The protocol was designed by Cisco Systems as a proprietary protocol, available only on Cisco routers
+
+BASIS FOR COMPARISON		|	EIGRP				|	OSPF
+-----------------------------------------------------------------------------------------------------
+Stands for			| Enhanced Interior Gateway Protocol	| Open Shortest Path First
+Standards-based on		| Cisco Proprietary			| IETF Open Standard
+Protocol type			| Hybrid				| Link state
+Routing metrics			| Combination of bandwidth, reliability, load and delay.	Interface bandwidth
+Administrative distance	90 (Internal)
+170 (External)	110
+CPU requirements	Lower CPU and memory needs	Require high CPU and memory
+Algorithm	DUAL distance vector	Dijkstra link state
+Hierarchical design	No	Yes
+Support of IPX and AppleTalk	Yes	No
+Updates	Updates and queries as needed to a multicast address	Flooding as needed and periodically to a multicast address
+Ease of implementation	Easy but no provision of auto-summary	Complicated
+Loop prevention	Split horizon and DUAL	Full knowledge of topology
+Filtering and summarization	Possible anywhere in the network	Only on ASBRs or ABRs
 
 00110011110100011101
 </b></details>
-
