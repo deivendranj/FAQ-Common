@@ -556,20 +556,20 @@ VPN stands for Virtual Private Network (VPN), that allows a user to connect to a
 Virtual Private Network (VPN) is basically of 2 types:
 
 Remote Access VPN:
-
+------------------
 Remote Access VPN permits a user to connect to a private network and access all its services and resources remotely. The connection between the user and the private network occurs through the Internet and the connection is secure and private. Remote Access VPN is useful for home users and business users both.
 An employee of a company, while he/she is out of station, uses a VPN to connect to his/her company’s private network and remotely access files and resources on the private network. Private users or home users of VPN, primarily use VPN services to bypass regional restrictions on the Internet and access blocked websites. Users aware of Internet security also use VPN services to enhance their Internet security and privacy.
 
 Site to Site VPN:
-
+-----------------
 A Site-to-Site VPN is also called as Router-to-Router VPN and is commonly used in the large companies. Companies or organizations, with branch offices in different locations, use Site-to-site VPN to connect the network of one office location to the network at another office location.
 
 Types of Virtual Private Network (VPN) Protocols:
 
-Internet Protocol Security (IPSec):
-Layer 2 Tunneling Protocol (L2TP):
-Point–to–Point Tunneling Protocol (PPTP):
-OpenVPN - OpenVPN is an open source VPN that is commonly used for creating Point-to-Point and Site-to-Site connections. It uses a traditional security protocol based on SSL and TLS protocol.
+* Internet Protocol Security (IPSec):
+* Layer 2 Tunneling Protocol (L2TP):
+* Point–to–Point Tunneling Protocol (PPTP):
+* OpenVPN - OpenVPN is an open source VPN that is commonly used for creating Point-to-Point and Site-to-Site connections. It uses a traditional security protocol based on SSL and TLS protocol.
 
 </b></details>
 
