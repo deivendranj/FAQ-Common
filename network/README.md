@@ -610,8 +610,11 @@ When your BGP speaker receives a BGP prefix, there are going to be many path att
 All BGP path attributes fall into one of four main categories. Note that this list also provides example attributes in each category. Do not be too concerned with these specific attribute values now, as you will understand many of them fully when you complete this blog series.
 
 Well-Known Mandatory (for example:  Origin, AS Path, and Next Hop)
+
 Well-Known Discretionary (for example: Local Preference)
+
 Optional Transitive (for example: Community)
+
 Optional Non-Transitive (for example: Cluster List)
 
 </b></details>
