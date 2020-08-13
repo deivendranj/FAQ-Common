@@ -444,6 +444,15 @@ The user is happy :D
 
 
 <details>
+<summary>What is DNS Recursive, Iterative</summary><br><b>
+
+
+![alt_text](https://www.omnisecu.com/images/tcpip/recursive-iterative-dns-query.jpg)
+	
+</b></details>
+
+
+<details>
 <summary>Explain the resolution sequence of: www.site.com</summary><br><b>
 
 It's resolved in this order:
@@ -491,12 +500,25 @@ MX (Mail Exchange) Specifies a mail exchange server for the domain, which allows
 DNS uses UDP port 53 for resolving queries either regular or reverse. DNS uses TCP for zone transfer. 
 </b></details>
 
+
 <details>
-<summary>What is Round Robin DNS?</summary><br><b>
+<summary>What is loadbalancing and how is it done on application layer?</summary><br><b>
+
+Load balancing is defined as the methodical and efficient distribution of network or application traffic across multiple servers in a server farm. Each load balancer sits between client devices and backend servers, receiving and then distributing incoming requests to any available server capable of fulfilling them
+
 </b></details>
 
 <details>
-<summary>What is DNS Record TTL? Why do we need it?</summary><br><b>
+<summary>What are the different types of DNS loadbalancing?</summary><br><b>
+
+DNS load balancing is the practice of configuring a domain in the Domain Name System (DNS) such that client requests to the domain are distributed across a group of server machines. A domain can correspond to a website, a mail system, a print server, or another service that is made accessible via the Internet.
+
+Backup server: A clone instance of a domain is created to serve as a secondary DNS. The primary DNS may redirect traffic to this server at runtime.
+
+Round robin DNS-based load sharing: DNS requests are rotated and shared across multiple domain server instances. Although mainly a load sharing algorithm, this also facilitates load balancing with DNS.
+
+Dynamic DNS load balancing: DNS requests are routed between domain servers with the best available resources and minimal load.
+
 </b></details>
 
 <details>
@@ -583,26 +605,6 @@ IPSec Transport mode is used for end-to-end communications, for example, for com
 </b></details>
 
 <details>
-<summary>What is loadbalancing and how is it done on application layer?</summary><br><b>
-
-Load balancing is defined as the methodical and efficient distribution of network or application traffic across multiple servers in a server farm. Each load balancer sits between client devices and backend servers, receiving and then distributing incoming requests to any available server capable of fulfilling them
-
-</b></details>
-
-<details>
-<summary>What are the different types of DNS loadbalancing?</summary><br><b>
-
-DNS load balancing is the practice of configuring a domain in the Domain Name System (DNS) such that client requests to the domain are distributed across a group of server machines. A domain can correspond to a website, a mail system, a print server, or another service that is made accessible via the Internet.
-
-Backup server: A clone instance of a domain is created to serve as a secondary DNS. The primary DNS may redirect traffic to this server at runtime.
-
-Round robin DNS-based load sharing: DNS requests are rotated and shared across multiple domain server instances. Although mainly a load sharing algorithm, this also facilitates load balancing with DNS.
-
-Dynamic DNS load balancing: DNS requests are routed between domain servers with the best available resources and minimal load.
-
-</b></details>
-
-<details>
 <summary>BGP states/Attributes</summary><br><b>
 
 In order to make decisions in its operations with peers, a BGP peer uses a simple finite state machine (FSM) that consists of six states: Idle; Connect; Active; OpenSent; OpenConfirm; and Established. For each peer-to-peer session, a BGP implementation maintains a state variable that tracks which of these six states the session is in. The BGP defines the messages that each peer should exchange in order to change the session from one state to another. 
@@ -639,15 +641,6 @@ IP fragmentation is an Internet Protocol (IP) process that breaks packets into s
 Fragmentation is necessary for data transmission, as every network has a unique limit for the size of datagrams that it can process. This limit is known as the maximum transmission unit (MTU).
 
 </b></details>
-
-<details>
-<summary>What is DNS Recursive, Iterative</summary><br><b>
-
-
-![alt_text](https://www.omnisecu.com/images/tcpip/recursive-iterative-dns-query.jpg)
-	
-</b></details>
-
 
 <details>
 <summary>what is Path MTU?</summary><br><b>
