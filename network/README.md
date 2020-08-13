@@ -392,26 +392,19 @@ Exponential backoff is an algorithm that uses feedback to multiplicatively decre
 </b></details>
 
 <details>
-<summary>What is EIGRP</summary><br><b>
+<summary>What is EIGRP and difference between OSPF</summary><br><b>
 
 Enhanced Interior Gateway Routing Protocol (EIGRP) is an advanced distance-vector routing protocol that is used on a computer network for automating routing decisions and configuration. The protocol was designed by Cisco Systems as a proprietary protocol, available only on Cisco routers
 
-BASIS FOR COMPARISON		|	EIGRP				|	OSPF
------------------------------------------------------------------------------------------------------
-Stands for			| Enhanced Interior Gateway Protocol	| Open Shortest Path First
-Standards-based on		| Cisco Proprietary			| IETF Open Standard
-Protocol type			| Hybrid				| Link state
-Routing metrics			| Combination of bandwidth, reliability, load and delay.	Interface bandwidth
-Administrative distance	90 (Internal)
-170 (External)	110
-CPU requirements	Lower CPU and memory needs	Require high CPU and memory
-Algorithm	DUAL distance vector	Dijkstra link state
-Hierarchical design	No	Yes
-Support of IPX and AppleTalk	Yes	No
-Updates	Updates and queries as needed to a multicast address	Flooding as needed and periodically to a multicast address
-Ease of implementation	Easy but no provision of auto-summary	Complicated
-Loop prevention	Split horizon and DUAL	Full knowledge of topology
-Filtering and summarization	Possible anywhere in the network	Only on ASBRs or ABRs
+EIGRP (Enhanced Interior Gateway Routing Protocol) is a Cisco-based distance vector protocol which works on DUAL (Diffusing Update Algorithm). It is used for sharing the information from one to the neighbouring routers which exist within the same area. Although, it is a complex protocol but we can configure and run it easily in small and large networks. It was devised to overcome the shortcomings of the classical distance vector routing protocols like IGRP and RIP which were hard to scale according to the needs of the network.
 
-00110011110100011101
+</b></details>
+
+<details>
+<summary>Explain BGP</summary><br><b>
+
+Border Gateway Protocol (BGP) is used to Exchange routing information for the internet and is the protocol used between ISP which are different ASes. The protocol can connect together any internetwork of autonomous system using an arbitrary topology.
+
+OSPF is a IGP , an Interior Gateway Protocol, much like EIGRP, OSPF, IS-IS, RIP. BGP is a EGP, Exterior Gateway Protocol . And there is only one EGP, that is BGP.
+
 </b></details>
