@@ -416,8 +416,6 @@ OSPF is a IGP , an Interior Gateway Protocol, much like EIGRP, OSPF, IS-IS, RIP.
 
 </b></details>
 
-</b></details>
-
 <details>
 <summary>What is DNS?</summary><br><b>
 
@@ -429,6 +427,18 @@ The Domain Name System is a hierarchical and decentralized naming system for com
 <summary>What happens when you type amazon.com in the browser?</summary><br><b>
 
 ![alt_text](https://github.com/deivendranj/FAQ-Common/blob/master/images/Picture5.png?raw=true)
+
+</b></details>
+
+
+<details>
+<summary>Explain IPsec briefly</summary><br><b>
+
+In computing, Internet Protocol Security (IPsec) is a secure network protocol suite that authenticates and encrypts the packets of data to provide secure encrypted communication between two computers over an Internet Protocol network. It is used in virtual private networks (VPNs).
+
+IPsec includes protocols for establishing mutual authentication between agents at the beginning of a session and negotiation of cryptographic keys to use during the session. IPsec can protect data flows between a pair of hosts (host-to-host), between a pair of security gateways (network-to-network), or between a security gateway and a host (network-to-host).[1] IPsec uses cryptographic security services to protect communications over Internet Protocol (IP) networks. It supports network-level peer authentication, data-origin authentication, data integrity, data confidentiality (encryption), and replay protection.
+
+The initial IPv4 suite was developed with few security provisions. As a part of the IPv4 enhancement, IPsec is a layer 3 OSI model or internet layer end-to-end security scheme. In contrast, while some other Internet security systems in widespread use operate above layer 3, such as Transport Layer Security (TLS) that operates at the Transport Layer and Secure Shell (SSH) that operates at the Application layer, IPsec can automatically secure applications at the IP layer.
 
 </b></details>
 
