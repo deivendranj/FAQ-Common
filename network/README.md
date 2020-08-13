@@ -451,10 +451,12 @@ As outlined in our IPSec protocol article, Encapsulating Security Payload (ESP) 
 
  
 UNDERSTANDING IPSEC MODES –TUNNEL MODE & TRANSPORT MODE
+
 IPSec can be configured to operate in two different modes, Tunnel and Transport mode. Use of each mode depends on the requirements and implementation of IPSec.
 
  
 IPSEC TUNNEL MODE
+
 IPSec tunnel mode is the default mode. With tunnel mode, the entire original IP packet is protected by IPSec. This means IPSec wraps the original packet, encrypts it, adds a new IP header and sends it to the other side of the VPN tunnel (IPSec peer).
 
 Tunnel mode is most commonly used between gateways (Cisco routers or ASA firewalls), or at an end-station to a gateway, the gateway acting as a proxy for the hosts behind it.
@@ -464,6 +466,7 @@ Tunnel mode is used to encrypt traffic between secure IPSec Gateways, for exampl
 ![alt_text](http://www.firewall.cx/images/stories/ipsec-modes-transport-tunnel-5.gif)
 
 IPSEC TRANSPORT MODE
+
 IPSec Transport mode is used for end-to-end communications, for example, for communication between a client and a server or between a workstation and a gateway (if the gateway is being treated as a host).  A good example would be an encrypted Telnet or Remote Desktop session from a workstation to a server.
 
 ![alt_text](http://www.firewall.cx/images/stories/ipsec-modes-transport-tunnel-6.gif)
