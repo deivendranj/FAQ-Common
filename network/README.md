@@ -588,3 +588,30 @@ Round robin DNS-based load sharing: DNS requests are rotated and shared across m
 Dynamic DNS load balancing: DNS requests are routed between domain servers with the best available resources and minimal load.
 
 </b></details>
+
+<details>
+<summary>BGP states/Attributes</summary><br><b>
+
+In order to make decisions in its operations with peers, a BGP peer uses a simple finite state machine (FSM) that consists of six states: Idle; Connect; Active; OpenSent; OpenConfirm; and Established. For each peer-to-peer session, a BGP implementation maintains a state variable that tracks which of these six states the session is in. The BGP defines the messages that each peer should exchange in order to change the session from one state to another. 
+
+The first state is the "Idle" state. In the "Idle" state, BGP initializes all resources, refuses all inbound BGP connection attempts and initiates a TCP connection to the peer.
+The second state is "Connect". In the "Connect" state, the router waits for the TCP connection to complete and transitions to the "OpenSent" state if successful. 
+If unsuccessful, it starts the ConnectRetry timer and transitions to the "Active" state upon expiration. 
+In the "Active" state, the router resets the ConnectRetry timer to zero and returns to the "Connect" state. 
+In the "OpenSent" state, the router sends an Open message and waits for one in return in order to transition to the "OpenConfirm" state. Keepalive messages are exchanged and, upon successful receipt, the router is placed into the "Established" state. 
+In the "Established" state, the router can send/receive: Keepalive; Update; and Notification messages to/from its peer.
+
+![alt_text](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/BGP_FSM.svg/220px-BGP_FSM.svg.png)
+
+BGP Path Attributes:
+
+When your BGP speaker receives a BGP prefix, there are going to be many path attributes tagged to it, and we know that these are going to be critical when it comes to BGP doing things like choosing a very best path to a destination. Interestingly, not all of these path attributes are created equal.
+
+All BGP path attributes fall into one of four main categories. Note that this list also provides example attributes in each category. Do not be too concerned with these specific attribute values now, as you will understand many of them fully when you complete this blog series.
+
+Well-Known Mandatory (for example:  Origin, AS Path, and Next Hop)
+Well-Known Discretionary (for example: Local Preference)
+Optional Transitive (for example: Community)
+Optional Non-Transitive (for example: Cluster List)
+
+</b></details>
