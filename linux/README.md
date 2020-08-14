@@ -269,6 +269,19 @@ Applying that to the load average output (0.5, 1.5, 3.0) that we got above:
 1.5 means the queue is filling up. If the average gets any higher, things are going to start slowing down.
 3.00 means there's a considerably long queue waiting, and an extra resource/counter is required to clear up the queue faster. 
 
+On a single core system this would mean:
+-----------------------------------------
+The CPU was fully (100%) utilized on average; 1 processes was running on the CPU (1.00) over the last 1 minute.
+The CPU was idle by 60% on average; no processes were waiting for CPU time (0.40) over the last 5 minutes.
+The CPU was overloaded by 235% on average; 2.35 processes were waiting for CPU time (3.35) over the last 15 minutes.
+
+On a dual-core system this would mean:
+-----------------------------------------
+The one CPU was 100% idle on average, one CPU was being used; no processes were waiting for CPU time(1.00) over the last 1 minute.
+The CPUs were idle by 160% on average; no processes were waiting for CPU time. (0.40) over the last 5 minutes.
+The CPUs were overloaded by 135% on average; 1.35 processes were waiting for CPU time. (3.35) over the last 15 minutes.
+
+
 </b></details>
 
 <details>
