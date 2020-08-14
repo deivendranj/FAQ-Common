@@ -1208,3 +1208,36 @@ Check if the bonding interface was created successfully looking at the output of
 
 <code># ifconfig</code>
 </b></details>
+
+<details>
+<summary>How create VLAN in linux</summary><br><b>
+
+![alt_text](https://www.redhat.com/sysadmin/sites/default/files/styles/embed_large/public/2019-10/VLAN7.png?itok=3o9Z3oY9)
+
+First, ensure that the 802.1Q kernel module is loaded. In practice, this module is automatically loaded if you configure a VLAN subinterface. However, I’ll manually enable it for the sake of demonstration:
+
+<code># lsmod | grep 8021q</code>
+
+<code># modprobe 8021q</code>
+
+<code># lsmod | grep 8021q</code>
+8021q              	33208  0
+garp               	14384  1 8021q
+mrp                	18542  1 8021q
+
+<code># cat /etc/sysconfig/network-scripts/ifcfg-eth0.200</code>
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+NAME=eth0.200
+UUID=04cb4fa6-f820-45c0-b847-df94e9628bc5
+DEVICE=eth0.200
+ONBOOT=yes
+IPADDR=192.168.2.100
+NETMASK=255.255.255.0
+VLAN=yes
+
+</b></details>
