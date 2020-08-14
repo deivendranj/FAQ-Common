@@ -1536,3 +1536,230 @@ You can use curl to measure resolving, time to connect, time to first byte and t
 -   [darkstat](https://unix4lyfe.org/darkstat/) - libpcap monitoring
 
 </b></details>
+
+## Cheat sheet for Filesystem
+
+<details>
+<summary>Filesystem, LVM, Part troubleshooting command in Linux</summary><br><b>
+See Also: <?add topic='DRBD'?> <?add topic='LVM'?> <?add topic='Partitioning'?>
+
+### Misc
+
+-   [detox](http://detox.sourceforge.net/): Tool for recursive cleanup
+    of file names.
+
+        detox -v -r <directory>
+
+-   [Fast File
+    Deletion](http://www.slashroot.in/which-is-the-fastest-method-to-delete-files-in-linux):
+
+        perl -e 'for(<*>){((stat)[9]<(unlink))}'
+
+-   POSIX ACLs:
+
+        getfacl <file>           # List ACLs for file 
+        setfacl -m user:joe:rwx dir # Modify ACL
+        ls -ld <file>            # Check for active ACL (indicates a "+")
+
+-   [uNetBootin](http://unetbootin.sourceforge.net/): Create bootable
+    media for any distribution. Most useful with USB sticks.
+-   rsync - --delete doesn't work: It happens when you call rsync
+    without a trailing slash in the source path like this:
+
+        rsync -az -e ssh --delete /data server:/data
+
+    It just won't delete anything. It will when running it like this:
+
+        rsync -az -e ssh --delete /data/ server:/data
+
+- List physical disk serial number
+
+        # As root
+        hdparm -I /dev/sda | grep Serial
+        lshw -class disk
+        smartctl -i /dev/sda
+        lsblk --nodeps -o name,serial
+
+        # As user
+        /sbin/udevadm info --query=property --name=sda |grep SERIAL
+        
+- Debug drive events
+
+        udevadm monitor            # Track any changes
+        
+        udevadm test /devices/pci0000:00/<id>
+
+- inotify - Detect file access
+
+        apt-get install inotify-tools
+        
+        inotifywait -m -r /var/log           # Show all activity in all subdirs
+        inotifywait -m -e create -r /data    # Show all file/dir creations
+        inotifywait -m -e isdir -r /data     # Show all subdir accesses (e.g. before mkdir)
+        
+        inotifywait -m /var/log/auth.log     # Show all access to single file
+
+-   losetup
+
+        losetup /dev/loop0 <disk image>      # Create
+        losetup -e /dev/loop0 <disk image>   # Create with encryption
+        losetup /dev/loop0          # Get info on loop0
+        losetup -d /dev/loop0           # Detach
+        losetup -a              # List used loop devices
+
+-   [dm-crypt with/without LUKS](http://cb.vu/unixtoolbox.xhtml#wluks)
+
+#### Automated Sync
+
+Synching without a distributed filesystem
+
+-   [lsyncd](https://code.google.com/p/lsyncd/): inotify based rsync
+    daemon
+
+        lsyncd -rsync /home remotehost.org::share/ 
+
+    Or in foreground
+
+        lsyncd -nodaemon -log all -rsyncssh <local dir> <remote host> <remote dir>
+
+#### Distributed Filesystems
+
+| Name | Vendor | Distinguishing Features |
+| ---- | ------ | ----------------------- |
+| [HDFS](http://hadoop.apache.org/) | Hadoop | FUSE, NFS, HFTP, S3 |
+| [Ceph](http://ceph.com) | Redhat | NFS, POSIX, S3, Swift, Fuse, Docker support |
+| [GlusterFS](http://gluster.org) | Redhat | NFS, POSIX, S3, Docker support, also as "Redhat Storage Server" |
+| [OCFS2](https://oss.oracle.com/projects/ocfs2/) | Oracle | POSIX, often used with [DRBD](http://www.drbd.org/)  Block replication |
+| [Lustre](http://lustre.org/) | Oracle | POSIX, abandoned, used in HPC |
+| [MooseFS](https://moosefs.com/) | Core Technology | POSIX, NFS drop-in |
+
+Cloud/SaaS
+
+
+| Name | Vendor | Distinguishing Features |
+| ---- | ------ | ----------------------- |
+| Elastifile ECFS |    | Google Cloud, AWS, Azure |
+| Nooba | Redhat | End-user easy cluster on any cloud storage |
+| Azure Netapp Files |   | Azure, Google Cloud |
+
+## SSD Erase
+
+    hdparm --user-master u --security-set-pass ctmagazin /dev/sdX
+    hdparm --user-master u --security-erase ctmagazin /dev/sdX
+    
+### Mounting LVM Partitions
+
+    lvdisplay                   # To lookup partition name
+    mount /dev/vg0/vol1 /mnt
+
+### Resizing Volumes
+
+    lvresize -L 50G /dev/volgrp/<name>
+    resize2fs /dev/vda
+    xfs_growfs /dev/vda
+
+### Adding Disks to Existing Volume
+
+Via: [LVM - Add another
+disk](http://sujithemmanuel.blogspot.com/2007/04/how-to-add-disk-to-lvm.html)
+
+    # Setup partition with (use parted for >2TB)
+    (parted) mklabel gpt       # only when >2TB
+    (parted) mkpart primary lvm 0 4T    # setup disk full size (e.g. 4TB)
+
+    pvcreate /dev/sdb1       # Create physical LVM disk
+    vgextend vg01 /dev/sdb1      # Add to volume group
+    vgextend -L +4t /dev/mapper/vg01-lvdata  # Extend your volume 
+    resize2fs /dev/mapper/vg01-lvdata   # Auto-resize file system
+
+## Disks
+
+Setting/Listing disk UUIDs
+
+    blkid                           # List all
+    findfs UUID=<id>                # Find specific id
+    ls -l /dev/disk/by-uuid/<id>
+
+    uuidgen                         # New id
+    tune2fs -U <id> /dev/sda1       # Setting id
+
+Where to find different partition types
+
+    /dev/disk/by-uuid      -> MBR partitions
+    /dev/disk/by-partuuid  -> GPT partitions
+
+## Bootloader
+
+### UEFI Secure Boot
+
+Diagnose with
+
+    efibootmgr -v
+
+### initramfs Update
+
+    update-initramfs -u
+
+###  Grub Config Update
+
+    update-grub
+
+## Misc
+
+-   [Convert ext2 to
+    ext3](http://www.troubleshooters.com/linux/ext2toext3.htm):
+
+        tune2fs -j /dev/hda1
+
+-   [Convert ext3 to
+    ext4](http://www.cyberciti.biz/tips/linux-convert-ext3-to-ext4-file-system.html):
+
+        tune2fs -O extents,uninit_bg,dir_index /dev/sda1
+
+-   [Determine Inode
+    Count](http://www.cyberciti.biz/faq/linux-show-contents-of-filesystem-superblock-inode/):
+
+        tune2fs -l /dev/sda1 | grep Inode
+
+-   [Disable ext4
+    barriers](http://liferea.blogspot.de/2010/06/serious-performance-issues-with-ext4fs.html):
+    Add "barrier=0" to the mount options.
+
+### Commands
+
+    cat /proc/drbd
+
+    drbdsetup 0 show
+
+    drbdadm create-md <name>
+    drbdadm attach <name>
+    drbdadm syncer <name>
+    drbdadm connect <name>
+    drbdadm [--discard-my-data] connect <name>
+    drbdadm disconnect <name>
+
+    drbdadm primary <name>
+    drbdadm secondary <name>
+
+### Split Brain
+
+If it occurs it will be logged to syslog
+
+    grep "Split-Brain" /var/log/*
+
+[Solution](http://www.ipserverone.info/dedicated-server/linux-2/how-to-fix-drbd-recovery-from-split-brain/):
+Choose one node and run
+
+    drbdadm secondary all
+    drbdadm disconnect all
+    drbdadm -- --discard-my-data connect all
+
+Make other node primary
+
+    drbdadm primary all
+    drbdadm disconnect all
+    drbdadm connect all
+
+Check /proc/drbd again
+
+</b></details>
