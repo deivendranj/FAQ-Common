@@ -1153,25 +1153,58 @@ Buffer: Reserved place in RAM which is used to hold data for temporary purposes
 Cache: Cache is usually used when processes reading and writing to the disk to make the process faster by making similar data used by different programs easily accessible.
 </b></details>
 
-## Virtualization
+## Network
 
 <a name="virtualization-beginner"></a>
 #### :baby: Beginner
 
-<details>
-<summary>Explain what is Virtualization</summary><br><b>
-</b></details>
 
 <details>
-<summary>What is "time sharing"?</summary><br><b>
+<summary>How to create a NIC Channel Bonding in Linux</summary><br><b>
+1. As root, create a Bond0 Configuration File: # vi /etc/sysconfig/network-scripts/ifcfg-bond0
+2. Add the following lines to the Bond0 Configuration File:
 
-Even when using a system with one physical CPU, it's possible to allow multiple users to work on it and run programs. This is possible with time sharing where computing resources are shared in a way it seems to the user the system has multiple CPUs but in fact it's simply one CPU shared by applying multiprogramming and multi-tasking.
+DEVICE=bond0
+IPADDR=192.168.1.10
+NETWORK=192.168.1.0
+NETMASK=255.255.255.0
+USERCTL=no
+BOOTPROTO=none
+ONBOOT=yes
+BONDING_OPTS="mode=0 miimon=100"
+
+3. Open the configuration file for eth0:
+
+<code> # vi /etc/sysconfig/network-scripts/ifcfg-eth0 </code>
+4. Edit eth0 configuration file adding the "MASTER" and "SLAVE" parameters:
+
+DEVICE=eth0
+USERCTL=no
+ONBOOT=yes
+MASTER=bond0
+SLAVE=yes
+BOOTPROTO=none
+
+Repeat steps #3 and #4 for eth1.
+5. Open the kernel modules configuration file
+RHEL5 # vi /etc/modprobe.conf
+RHEL6 # vi /etc/modprobe.d/modprobe.conf
+
+6. Add the following line to modprobe.conf file:
+
+alias bond0 bonding
+options bond0 mode=balance-rr miimon=100
+
+
+7. Load the bonding Module:
+
+<code># modprobe bonding </code>
+
+Restart Network service:
+
+<code># service network restart</code>
+
+Check if the bonding interface was created successfully looking at the output of the ifconfig command:
+
+<code># ifconfig</code>
 </b></details>
-
-<details>
-<summary>What is "space sharing"?</summary><br><b>
-
-Somewhat the opposite of time sharing. While in time sharing a resource is used for a while by one entity and then the same resource can be used by another resource, in space sharing the space is shared by multiple entities but in a way it's not being transfered between them.<br>
-It's used by one entity until this entity decides to get rid of it. Take for example storage. In storage, a file is your until you decide to delete it.
-</b></details>
-
