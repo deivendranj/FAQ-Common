@@ -1241,3 +1241,35 @@ NETMASK=255.255.255.0
 VLAN=yes
 
 </b></details>
+
+<details>
+<summary>Types of Network Bonding?</summary><br><b>
+mode=0 (balance-rr)
+
+This mode is based on Round-robin policy and it is the default mode. This mode offers fault tolerance and load balancing features. It transmits the packets in Round robin fashion that is from the first available slave through the last.
+
+mode-1 (active-backup)
+
+This mode is based on Active-backup policy. Only one slave is active in this band, and another one will act only when the other fails. The MAC address of this bond is available only on the network adapter part to avoid confusing the switch. This mode also provides fault tolerance.
+
+mode=2 (balance-xor)
+
+This mode sets an XOR (exclusive or) mode that is the source MAC address is XOR’d with destination MAC address for providing load balancing and fault tolerance. Each destination MAC address the same slave is selected.
+
+mode=3 (broadcast)
+
+This method is based on broadcast policy that is it transmitted everything on all slave interfaces. It provides fault tolerance. This can be used only for specific purposes.
+
+mode=4 (802.3ad)
+
+This mode is known as a Dynamic Link Aggregation mode that has it created aggregation groups having same speed. It requires a switch that supports IEEE 802.3ad dynamic link. The slave selection for outgoing traffic is done based on a transmit hashing method. This may be changed from the XOR method via the xmit_hash_policy option.
+
+mode=5 (balance-tlb)
+
+This mode is called Adaptive transmit load balancing. The outgoing traffic is distributed based on the current load on each slave and the incoming traffic is received by the current slave. If the incoming traffic fails, the failed receiving slave is replaced by the MAC address of another slave. This mode does not require any special switch support.
+
+mode=6 (balance-alb)
+
+This mode is called adaptive load balancing. This mode does not require any special switch support.
+
+</b></details>
