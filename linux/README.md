@@ -1535,6 +1535,107 @@ You can use curl to measure resolving, time to connect, time to first byte and t
     all AS as well as links to their looking glasses.
 -   [darkstat](https://unix4lyfe.org/darkstat/) - libpcap monitoring
 
+## Filter Examples
+
+Check out [tcpdump - Tutorial](http://dmiessler.com/study/tcpdump/) for many usage examples!
+
+        # Filter port
+        tcpdump port 80
+        tcpdump src port 1025 
+        tcpdump dst port 389
+        tcpdump portrange 21-23
+
+        # Filter source or destination IP
+        tcpdump src 10.0.0.1
+        tcpdump dest 10.0.0.2
+
+        # Filter  everything on network 
+        tcpdump net 1.2.3.0/24
+
+        # Logically operators
+        tcpdump src port 1025 and tcp 
+
+        # Provide full hex dump of captured HTTP packages
+        tcpdump -s0 -x port 80
+
+        # Filter TCP flags (e.g. RST)
+        tcpdump 'tcp[13] & 4!=0'
+
+## Verbose Trace
+
+Be verbose and print 1500 bytes package hex dumps:
+
+    tcpdump -i eth0 -nN -vvv -xX -s 1500 port <some port>
+
+## Non-promiscous mode
+
+    tcpdump -e ...
+
+## iptables Examples
+
+-   [ipsets vs. iptables
+    Performance](http://daemonkeeper.net/781/mass-blocking-ip-addresses-with-ipset/)
+-   [ipsets - Using IP sets for simpler iptables
+    rules](http://utcc.utoronto.ca/~cks/space/blog/linux/IptablesIpsetNotes)
+
+        ipset create smtpblocks hash:net counters
+        ipset add smtpblocks 27.112.32.0/19
+        ipset add smtpblocks 204.8.87.0/24
+        iptables -A INPUT -p tcp --dport 25 -m set --match-set smtpblocks src -j DROP
+
+-   iptables - Loopback Routing:
+
+        iptables -t nat -A POSTROUTING -d <internal web server IP> -s <internal network address> -p tcp --dport 80 -j SNAT --to-source <external web server IP>
+
+-   iptables - Show active rules:
+
+        iptables -S
+        iptables -L 
+        iptables -L <table>
+
+-   iptables - Full flush:
+
+        iptables -F
+        iptables -X
+        iptables -t nat -F
+        iptables -t nat -X
+        iptables -t mangle -F
+        iptables -t mangle -X
+        iptables -P INPUT ACCEPT
+        iptables -P FORWARD ACCEPT
+        iptables -P OUTPUT ACCEPT
+
+-   iptables - Allow established:
+
+        iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+
+-   iptables - Log failed requests:
+
+        iptables -I INPUT 5 -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7
+
+-   iptables - Persistency on Debian:
+
+        apt-get install iptables-persistent
+
+        # Set some rules and call
+        invoke-rc.d iptables-persistent save
+
+-   [iptables - Persistency on Ubuntu:
+    UFW](https://wiki.ubuntu.com/UncomplicatedFirewall) (Uncomplicated
+    FireWall)
+
+        ufw enable
+        ufw status
+        ufw allow ssh/tcp
+        ufw allow from <IP> proto tcp to any port <port>
+        ufw delete allow from <IP> proto tcp to any port <port>
+
+-   fail2ban CLI Commands
+
+        fail2ban-client status
+        fail2ban-client status <jail name>   
+
+
 </b></details>
 
 ## Cheat sheet for Filesystem
