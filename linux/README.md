@@ -242,6 +242,15 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 <code>top</code> will show you how much CPU percentage each process consumes
 <code>perf</code> is a great choice for sampling profiler and in general, figuring out what your CPU cycles are "wasted" on
 <code>flamegraphs</code> is great for CPU consumption visualization (http://www.brendangregg.com/flamegraphs.html)
+
+![alt_text](https://zohodiscussions.com/viewImage.do?fileId=18151000001631240&forumGroupURL=site24x7)
+
+Applying that to the load average output (0.5, 1.5, 3.0) that we got above: 
+
+0.5 means the minimum waiting time at the counter. Between 0.00 and 1.0, there is no need to worry. Your servers are safe!
+1.5 means the queue is filling up. If the average gets any higher, things are going to start slowing down.
+3.00 means there's a considerably long queue waiting, and an extra resource/counter is required to clear up the queue faster. 
+
 </b></details>
 
 <details>
@@ -251,6 +260,15 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 * Run `dstat -t` to check if it's related to disk or network.
 * Check if it's network related with `sar`
 * Check I/O stats with `iostat`
+
+![alt_text](https://zohodiscussions.com/viewImage.do?fileId=18151000001631240&forumGroupURL=site24x7)
+
+Applying that to the load average output (0.5, 1.5, 3.0) that we got above: 
+
+0.5 means the minimum waiting time at the counter. Between 0.00 and 1.0, there is no need to worry. Your servers are safe!
+1.5 means the queue is filling up. If the average gets any higher, things are going to start slowing down.
+3.00 means there's a considerably long queue waiting, and an extra resource/counter is required to clear up the queue faster. 
+
 </b></details>
 
 <details>
