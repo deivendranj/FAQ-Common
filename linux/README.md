@@ -312,18 +312,25 @@ On Linux at least, the load average and CPU utilization are actually two differe
 
 <details>
 <summary>How do you find out which Kernel version your system is using?</summary><br><b>
+  <code>#uname -r</code>
 </b></details>
 
 <details>
 <summary>What is a Linux kernel module and how do you load a new module?</summary><br><b>
+  To load a kernel module, run modprobe module_name as root. 
 </b></details>
 
 <details>
 <summary>Explain user space and kernel space</summary><br><b>
+Memory get's divided into two distinct areas:
+
+The user space, which is a set of locations where normal user processes run (i.e everything other than the kernel). The role of the kernel is to manage applications running in this space from messing with each other, and the machine.
+The kernel space, which is the location where the code of the kernel is stored, and executes under.
 </b></details>
 
 <details>
 <summary>What is KVM?</summary><br><b>
+Kernel-based Virtual Machine is a virtualization module in the Linux kernel that allows the kernel to function as a hypervisor. It was merged into the Linux kernel mainline in kernel version 2.6.20
 </b></details>
 
 
