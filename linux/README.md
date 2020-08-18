@@ -38,11 +38,17 @@ Troubleshooting
 
 <details>
 <summary>Name the Linux specific partition types?</summary><br><b>
+
 0x82                     >          Linux swap
+
 0x83                     >          Linux
+
 0x8e                     >          Linux LVM
+
 0xfd                     >          Linux RAID auto
+
 0x5                      >          Extended
+
 0xf                      >          Windows partition
 
 </b></details>
