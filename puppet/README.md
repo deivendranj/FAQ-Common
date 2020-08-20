@@ -30,93 +30,93 @@ https://puppet.com/docs/pe/2019.8/installing_compilers.html#install_compilers
   
   </b></details>
   
- <detais>
+ <details>
   <summary> what is puppet manifest </summary><br><b>
   </b></details>
   
- <detais>
+ <details>
   <summary> what is puppet module </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet resources </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet facts </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet environment </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet life cycle </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet tuning </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet csr attributes </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet management console </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet hiera </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet code manager </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet site.pp </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet class </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet Puppetfile </summary><br><b>
   </b></details>
   
   
   
- <detais>
+ <details>
   <summary> what is puppet version </summary><br><b>
   </b></details>
   
   
   
- <detais>
+ <details>
   <summary> what is puppet ports </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> How to check puppet master,compiler,DB status </summary><br><b>
   </b></details>
   
   
- <detais>
+ <details>
   <summary> what is puppet manifest </summary><br><b>
   </b></details>
   
