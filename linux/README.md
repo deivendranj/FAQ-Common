@@ -2745,3 +2745,81 @@ Refere : https://devhints.io/bash
   
   ```
 </b></details>
+
+<details>
+  <summary> HTTP Error codes</summary><br><b>
+  
+1xx: Informational
+2xx: Success
+3xx: Redirection
+4xx: Client Error
+5xx: Server Erro
+
+400 Bad Request
+--------------
+The 400 status code, or Bad Request error, means the HTTP request that was sent to the server has invalid syntax.
+
+Here are a few examples of when a 400 Bad Request error might occur:
+
+The user’s cookie that is associated with the site is corrupt. Clearing the browser’s cache and cookies could solve this issue
+Malformed request due to a faulty browser
+Malformed request due to human error when manually forming HTTP requests (e.g. using curl incorrectly)
+
+401 Unauthorized
+------------------
+The 401 status code, or an Unauthorized error, means that the user trying to access the resource has not been authenticated or has not been authenticated correctly. This means that the user must provide credentials to be able to view the protected resource.
+
+An example scenario where a 401 Unauthorized error would be returned is if a user tries to access a resource that is protected by HTTP authentication, as in this Nginx tutorial. In this case, the user will receive a 401 response code until they provide a valid username and password (one that exists in the .htpasswd file) to the web server.
+
+403 Forbidden
+--------------
+The 403 status code, or a Forbidden error, means that the user made a valid request but the server is refusing to serve the request, due to a lack of permission to access the requested resource. If you are encountering a 403 error unexpectedly, there are a few typical causes that are explained here.
+
+
+404 Not Found
+--------------
+The 404 status code, or a Not Found error, means that the user is able to communicate with the server but it is unable to locate the requested file or resource.
+
+404 errors can occur in a large variety of situations. If the user is unexpectedly receiving a 404 Not Found error, here are some questions to ask while troubleshooting:
+
+Does the link that directed the user to your server resource have a typographical error in it?
+Did the user type in the wrong URL?
+Does the file exist in the correct location on the server? Was the resource was moved or deleted on the server?
+Does the server configuration have the correct document root location?
+Does the user that owns the web server worker process have privileges to traverse to the directory that the requested file is in? (Hint: directories require read and execute permissions to be accessed)
+Is the resource being accessed a symbolic link? If so, ensure the web server is configured to follow symbolic links
+
+500 Internal Server Error
+---------------------------
+The 500 status code, or Internal Server Error, means that server cannot process the request for an unknown reason. Sometimes this code will appear when more specific 5xx errors are more appropriate.
+
+This most common cause for this error is server misconfiguration (e.g. a malformed .htaccess file) or missing packages (e.g. trying to execute a PHP file without PHP installed properly).
+
+502 Bad Gateway
+---------------
+The 502 status code, or Bad Gateway error, means that the server is a gateway or proxy server, and it is not receiving a valid response from the backend servers that should actually fulfill the request.
+
+If the server in question is a reverse proxy server, such as a load balancer, here are a few things to check:
+
+The backend servers (where the HTTP requests are being forwarded to) are healthy
+The reverse proxy is configured properly, with the proper backends specified
+The network connection between the backend servers and reverse proxy server is healthy. If the servers can communicate on other ports, make sure that the firewall is allowing the traffic between them
+If your web application is configured to listen on a socket, ensure that the socket exists in the correct location and that it has the proper permissions
+
+503 Service Unavailable
+--------------------------
+The 503 status code, or Service Unavailable error, means that the server is overloaded or under maintenance. This error implies that the service should become available at some point.
+
+If the server is not under maintenance, this can indicate that the server does not have enough CPU or memory resources to handle all of the incoming requests, or that the web server needs to be configured to allow more users, threads, or processes.
+
+504 Gateway Timeout
+-----------------------
+The 504 status code, or Gateway Timeout error, means that the server is a gateway or proxy server, and it is not receiving a response from the backend servers within the allowed time period.
+
+This typically occurs in the following situations:
+
+The network connection between the servers is poor
+The backend server that is fulfilling the request is too slow, due to poor performance
+The gateway or proxy server’s timeout duration is too short
+
+</b></details>
