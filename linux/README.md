@@ -2741,5 +2741,5 @@ $ ./example.pl > /dev/null 2>&1
   command &>/dev/null
 job arg1 arg2 &>/dev/null
 /path/to/script arg1 &>/dev/null
-
+  ```
 </b></details>
