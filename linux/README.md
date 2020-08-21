@@ -2728,7 +2728,7 @@ Refere : https://devhints.io/bash
 
 </b></details>
 
-<detais>
+<details>
   <summary> stdout and stderr 2>&1 &>/dev/null </summary><br><b>
   In plain English, it means that there are “ids” that identify these two locations, and it will always be 1 for stdout and 2 for stderr.
   ```
