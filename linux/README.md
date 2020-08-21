@@ -2727,3 +2727,19 @@ fi
 Refere : https://devhints.io/bash
 
 </b></details>
+
+<detais>
+  <summary> stdout and stderr 2>&1 &>/dev/null </summary><br><b>
+  In plain English, it means that there are “ids” that identify these two locations, and it will always be 1 for stdout and 2 for stderr.
+  ```
+  $ command > /dev/null 2>&1
+$ ./script.sh > /dev/null 2>&1
+$ ./example.pl > /dev/null 2>&1
+  
+  or
+  
+  command &>/dev/null
+job arg1 arg2 &>/dev/null
+/path/to/script arg1 &>/dev/null
+
+</b></details>
