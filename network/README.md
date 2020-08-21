@@ -398,6 +398,8 @@ Enhanced Interior Gateway Routing Protocol (EIGRP) is an advanced distance-vecto
 
 EIGRP (Enhanced Interior Gateway Routing Protocol) is a Cisco-based distance vector protocol which works on DUAL (Diffusing Update Algorithm). It is used for sharing the information from one to the neighbouring routers which exist within the same area. Although, it is a complex protocol but we can configure and run it easily in small and large networks. It was devised to overcome the shortcomings of the classical distance vector routing protocols like IGRP and RIP which were hard to scale according to the needs of the network.
 
+https://community.fs.com/blog/eigrp-vs-ospf-differences.html
+
 </b></details>
 
 <details>
