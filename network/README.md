@@ -441,7 +441,10 @@ The Resolver passes this information to the browser
 The user is happy :D
 
 ![alt_text](https://cybronys.com/wp-content/uploads/2019/12/what-is-DNS-server-3-1.png)
+
+
 ![alt_text](https://github.com/deivendranj/FAQ-Common/blob/master/images/Picture5.png?raw=true)
+
 
 </b></details>
 
